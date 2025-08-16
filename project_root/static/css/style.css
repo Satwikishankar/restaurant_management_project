@@ -4,6 +4,10 @@ body{
     color: #333;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1{
@@ -16,4 +20,5 @@ h1{
     max-width: 800px;
     margin: auto;
     padding: 20px;
+    font-size: 3rem;
 }

@@ -1,0 +1,19 @@
+body{
+    font-family:"Roboto";
+    background: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #007bff;
+    text-align:  center;
+    margin-top: 20px;
+}
+
+.container{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+RESTAURANT_PHONE = "+91 6302312378"
+
 
 # Application definition
 

@@ -23,3 +23,36 @@ h1{
     font-size: 3rem;
     border-radius: 16px;
 }
+
+.main-title{
+    font-size: 3rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.restaurant-name{
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.info-text{
+    font-size:1.2rem;
+    margin-bottom:30px;
+    color:#666;
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    text-decoration:none;
+    color:white;
+    background:#007bff;
+    border-radius:6px;
+    transition:background 0.3s ease;
+}
+
+.btn:hover{
+    background: #0056b3;
+}

@@ -12,6 +12,6 @@ def custom_404(request, exception):
     return render(request, "404.html", status=404)
 
 def home(request):
-    return render(request, "home.html", {
+    return render(request, "about.html", {
         "phone_number": settings.RESTAURANT_PHONE
     })

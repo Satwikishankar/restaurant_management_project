@@ -4,12 +4,12 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
         <title>Homepage</title>
     </head>
-    <body style"margin: 0; padding:0; font-family:Arial, sans-serif;">
-        <div style="text-align: center;" font-family: "Arial" class="container">
-            <h1 style="font-size: 3rem">Welcome to My Homepage </h1>
-            <h1>Welcome to {{ restaurant_name }}</h1>
-            <p style="font-size:1.2rem">The page you're looking for doesn't exist</p>
-            <a href="{% url 'home' %}" style="display:inline-block; padding: 12 24px">Back to Homepage</a>
+    <body>
+        <div class="container">
+            <h1 class="main-title">Welcome to My Homepage </h1>
+            <h1 class="restaurant_name">Welcome to {{ restaurant_name }}</h1>
+            <p class="info-text">The page you're looking for doesn't exist</p>
+            <a href="{% url 'home' %}" class="btn">Back to Homepage</a>
         </div>
     </body>
     </html>

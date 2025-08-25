@@ -14,6 +14,29 @@
             <p>Phone: +91 9876543210</p>
             <p>Email: contact@delshine.com</p>
         </div>
+
+        <hr>
+        <form id="contactForm">
+            <label>Name:</label>
+            <input type="text" id="name"><br><br>
+
+            <label>Email:</label>
+            <input type="email" id="email"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event){
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            if (name === "" || email === ""){
+                alert("Please fill in both Name and Email.");
+                event.preventDefault();
+            }
+            });
+        </script>
     </body>
 </html>
 

@@ -15,3 +15,13 @@ def home(request):
     return render(request, "about.html", {
         "phone_number": settings.RESTAURANT_PHONE
     })
+
+
+class MenuAPIView(APIView):
+    def get(self, request):
+        menu = [
+            {"name": "Cheese Pizza", "description": "Classic pizza with cheese & tomato", "price": 250},
+            {"name": "Pasta", "description": "Creamy Alfreddo", "price": 300},
+            {"name": "Caesar Salad", "description": "Fresh romaine", "price": 200}
+        ]
+        return Response(menu)

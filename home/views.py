@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.conf import settings
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
 # Create your views here.
+
 
 def homepage(request):
     return render(request, "homepage.html", {

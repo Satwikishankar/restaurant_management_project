@@ -2,11 +2,11 @@
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <title>Homepage</title>
+        <title>{{ restaurant_name }}/title>
     </head>
     <body>
         <div class="container">
-            <h1 class="main-title">Welcome to My Homepage </h1>
+            <h1 class="main-title">Welcome to {{ restaurant_name }} </h1>
 
             <img src="{% static 'images/logo.png' %}" alt="Delish Dine Logo" style="width:200px; margin-top:20px;">
 

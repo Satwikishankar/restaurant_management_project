@@ -8,7 +8,7 @@ from rest_framework.response import Response
 
 def homepage(request):
     return render(request, "homepage.html", {
-        "restaurant_name": getattr(settings, "RESTAURANT_NAME", "My Restaurant")
+        "restaurant_name": settings.RESTAURANT_NAME
     })
 
 def custom_404(request, exception):

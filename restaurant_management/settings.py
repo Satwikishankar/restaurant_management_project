@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['*']
 
 RESTAURANT_PHONE = "+91 6302312378"
 
+RESTAURANT_NAME = "My Cool Restaurant"
+
 
 # Application definition
 

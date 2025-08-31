@@ -3,6 +3,7 @@ from .models import Menu, Order
 
 # Register your models here.
 
+admin.site.register(MenuItem)
 @admin.register(Menu)
 class MenuAdmin(admin.ModelAdmin):
     list_display = ("name", "price")

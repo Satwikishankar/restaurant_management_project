@@ -31,6 +31,8 @@ RESTAURANT_PHONE = "+91 6302312378"
 
 RESTAURANT_NAME = "My Cool Restaurant"
 
+RESTAURANT_ADDRESS = "123 Main Street, Vijayawada, India"
+
 
 # Application definition
 

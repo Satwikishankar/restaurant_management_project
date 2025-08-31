@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+from .models import MenuItem
 # Create your views here.
 
 
@@ -18,6 +18,10 @@ def home(request):
     return render(request, "about.html", {
         "phone_number": settings.RESTAURANT_PHONE
     })
+
+def menu(request):
+    items = MenuItem.objects.all()
+    return render(request, "menu.html", {"items": items})
 
 
 class MenuAPIView(APIView):

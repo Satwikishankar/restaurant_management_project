@@ -3,13 +3,24 @@ from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import MenuItem
+from .forms import ContactForm
 # Create your views here.
 
 
 def homepage(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("homepage")
+
+        else:
+            form = ContactForm()
+
     return render(request, "homepage.html", {
-        "restaurant_name": settings.RESTAURANT_NAME
-        "restaurant_address": getattr(settings, "RESTAURANT_ADDRESS", "123 Main Street, Vijayawada, India")
+        "restaurant_name": settings.RESTAURANT_NAME,
+        "restaurant_address": getattr(settings, "RESTAURANT_ADDRESS", "123 Main Street, Vijayawada, India"),
+        "form": form
     })
 
 def custom_404(request, exception):

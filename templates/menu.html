@@ -10,12 +10,13 @@
         <div class="container">
             <h1 class="main-title">Our Menu </h1>
             <ul class="menu-list">
-                {% for item in menu_items %}
+                {% for item in items %}
                 <li class="menu-item">
-                    <span class="dish-name">{{ item.name }}</span>
-                    <span class="dish-price">{{ item.price }}</span>
+                    {{ item.name }} - ${{ item.price }}
                 </li>
-                {% endfor %}
+                {% empty %}
+                <li>No items yet.</li>
+                {% endFor %}
             </ul>
         </div>
 

@@ -9,6 +9,7 @@ from .models import MenuItem
 def homepage(request):
     return render(request, "homepage.html", {
         "restaurant_name": settings.RESTAURANT_NAME
+        "restaurant_address": getattr(settings, "RESTAURANT_ADDRESS", "123 Main Street, Vijayawada, India")
     })
 
 def custom_404(request, exception):

@@ -6,4 +6,5 @@ urlpatterns = [
     path('about/', home, name="about"),
     path('menu/', views.menu, name="menu"),
     path('', include('home.urls')),
+    path("contact/", views.contact_view, name="contact"),
 ]

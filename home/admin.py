@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Menu, Order
+from .models import MenuItem, Order, Menu, RestaurantAddress
 
 # Register your models here.
 
@@ -14,3 +14,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ("id", "customer_name", "created_at")
     search_fields = ("customer_name",)
     filter_horizontal = ("items",)
+
+@admin.register(RestaurantAddress)
+class RestaurantAddressAdmin(admin.Model.Admin):
+    list_display = ("address",)

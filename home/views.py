@@ -17,6 +17,8 @@ def homepage(request):
         else:
             form = ContactForm()
 
+    location = RestaurantLocation.objects.first()
+
     return render(request, "homepage.html", {
         "restaurant_name": settings.RESTAURANT_NAME,
         "restaurant_address": getattr(settings, "RESTAURANT_ADDRESS", "123 Main Street, Vijayawada, India"),

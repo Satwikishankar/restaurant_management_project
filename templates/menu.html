@@ -12,7 +12,16 @@
             <ul class="menu-list">
                 {% for item in items %}
                 <li class="menu-item">
-                    {{ item.name }} - ${{ item.price }}
+                    {{% item.image %}}
+                      <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-image">
+                {% else %}
+                <img src="{% static 'images/placeholder.png' %}" alt="No image" class="menu-image">
+                {% endif %}
+                <div class="menu-details">
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <p><strong>{{ item.price }}</strong></p>
+                </div>
                 </li>
                 {% empty %}
                 <li>No items yet.</li>

@@ -8,6 +8,17 @@
         <div class="container">
             <h1 class="main-title">Welcome to {{ restaurant_name }} </h1>
             <p>{{ restaurant_address }}</p>
+
+            <h3>Opening Hours</h3>
+            {% if opening_hours %}
+            <ul class="opening-hours">
+                {% for day, hours in opening_hours.items %}
+                <li><strong>{{ day }}:</strong>{{ hours }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>Opening hours not available.</p>
+            {% endif %}
         </div>
 
         <iframe

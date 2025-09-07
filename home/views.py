@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -56,8 +56,20 @@ class contact_view(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("contact")
+            contact = form.save()
+
+            subject = f"New Contact Message from {contact.name}"
+            body = f"Name: {contact.name}\nEmail: {contact.email}\n\nMessage:\n{contact.message}"
+
+            send_email(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [settings.RESTAURANT_EMAIL],
+                fail_silently=False,
+            )
+
+            return redirect("contact_success")
 
         else:
             form = ContactForm()

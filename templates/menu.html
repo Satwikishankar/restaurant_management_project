@@ -1,11 +1,12 @@
 <form method="get" action=".">
     <input type="text" name="q" placeholder="Search menu..." value="{{ query }}">
     <button type="submit">Search</button>
+</form>
 
 <ul class="menu-list">
     {% for item in items %}
-    <li class="menu-item">{{ item.name }} - {{ item.price }}</li>
-    {% empty %}
-    <li>No menu items have been found.</li>
+    <li class="menu-item">{{ item.name }} - ${{ item.price }} </li>
+    <% empty %}
+    <li>No items Found.</li>
     {% endFor %}
 </ul>

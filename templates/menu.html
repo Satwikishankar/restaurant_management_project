@@ -1,38 +1,11 @@
-{% load static %}
-<! DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Our Menu</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="main-title">Our Menu </h1>
-            <ul class="menu-list">
-                {% for item in items %}
-                <li class="menu-item">
-                    {{% item.image %}}
-                      <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-image">
-                {% else %}
-                <img src="{% static 'images/placeholder.png' %}" alt="No image" class="menu-image">
-                {% endif %}
-                <div class="menu-details">
-                    <h3>{{ item.name }}</h3>
-                    <p>{{ item.description }}</p>
-                    <p><strong>{{ item.price }}</strong></p>
-                </div>
-                </li>
-                {% empty %}
-                <li>No items yet.</li>
-                {% endFor %}
-            </ul>
-        </div>
+<form method="get" action=".">
+    <input type="text" name="q" placeholder="Search menu..." value="{{ query }}">
+    <button type="submit">Search</button>
 
-        <footer>
-            <p>&copy; 2025 Delish Dine. All Rights Reserved.</p>
-        </footer>
-
-    </body>
-</html>
-
+<ul class="menu-list">
+    {% for item in items %}
+    <li class="menu-item">{{ item.name }} - {{ item.price }}</li>
+    {% empty %}
+    <li>No menu items have been found.</li>
+    {% endFor %}
+</ul>

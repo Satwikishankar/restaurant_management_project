@@ -21,7 +21,11 @@ def homepage(request):
 
     return render(request, "homepage.html", {
         "restaurant_name": settings.RESTAURANT_NAME,
-        "restaurant_address": getattr(settings, "RESTAURANT_ADDRESS", "123 Main Street, Vijayawada, India"),
+        "restaurant_address": (
+            f"{location.address}, {location.city}, {location.state} - {location.zip_code}"
+            if location else "Address not available"
+        ),
+        "opening_hours": location.opening_hours if location else {},
         "form": form
     })
 

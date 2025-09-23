@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import MenuItem
 from .forms import ContactForm
+from django.core.mail import send_mail 
+from .forms import ContactForm 
 # Create your views here.
 
 
